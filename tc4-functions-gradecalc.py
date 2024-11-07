@@ -81,9 +81,9 @@ def getNumericGrade(course):
     # init variables
     numericGrade = 0.0
     # get letter grade from user
-    letterGrade = input("Please enter a letter grade for {0} : ".format(course)).upper()
+    letterGrade = getLetterGrade(course)
     # get modifier from user
-    modifier = input("Please enter a modifier (+, - or nothing) : ")
+    modifier = getModifier()
     # conver the letter grade to numeric
     numericGrade = convertLetter(letterGrade)
     # add the modifier to the numeric letter grade
@@ -91,11 +91,15 @@ def getNumericGrade(course):
     return numericGrade
 
 # INPUT ---------------------------------------------------------------------
-def getLetterGrade():
-    pass
+# get user input for course grade
+def getLetterGrade(course):
+    grade = input("Please enter a letter grade for {0} : ".format(course)).upper()
+    return grade
 
+# get user input for grade modifier
 def getModifier():
-    pass
+    mod = input("Please enter a modifier (+, - or nothing) : ")
+    return mod
 
 
 # main() FUNCTION
